@@ -1,0 +1,38 @@
+---
+import bookmarks from '@data/bookmarkCategory.json';
+
+const items = bookmarks.categories;
+---
+
+<div class="nav-area">
+	{
+		items.map((item) => (
+			<a class="nav-item" href={item}>
+				{item}
+			</a>
+		))
+	}
+</div>
+
+<style>
+	div.nav-area {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	a.nav-item {
+		width: 8em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: #8d8d8d 1px solid;
+		border-radius: 6px;
+		font-size: 0.9em;
+		margin: 1px;
+
+		text-decoration: none;
+	}
+	a.nav-item:hover {
+		border: #ff4d4d 2px solid;
+		color: #ff4f4d;
+	}
+</style>

@@ -1,0 +1,74 @@
+---
+interface BookmarkItem {
+	title: string;
+	url: string;
+}
+interface BookmarkItems {
+	[key: string]: BookmarkItem[];
+}
+import BaseLayout from '@layouts/BaseLayout.astro';
+import bookmarks from '@data/bookmarkItem.json';
+import categories from '@data/bookmarkCategory.json';
+
+export function getStaticPaths() {
+	return categories.categories.map((item) => {
+		return {
+			params: { tabKey: item },
+		};
+	});
+}
+
+const { tabKey = 'Home' } = Astro.params;
+const Bookmarks: BookmarkItems = bookmarks;
+const BookmarkItems: BookmarkItem[] = Bookmarks[tabKey];
+---
+
+<BaseLayout>
+	<div class="indicator">
+		{tabKey}
+	</div>
+	<div class="item-block">
+		{
+			BookmarkItems.map((item) => (
+				<a class="link-card" href={item.url} target="_black">
+					<span class="title">{item.title}</span>
+				</a>
+			))
+		}
+	</div>
+</BaseLayout>
+
+<style>
+	div.indicator {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		border: #8d8d8d 2px solid;
+		background-color: #4d4d4d;
+		border-radius: 6px;
+		margin-bottom: 1em;
+	}
+	div.item-block {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	a.link-card {
+		width: 33%;
+		height: 6em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		border: #4d4d4d 2px solid;
+		border-radius: 6px;
+
+		text-decoration: none;
+	}
+	a.link-card:hover {
+		border: #f84d4d 2px solid;
+		color: #f84f4f;
+		background-color: #2d0000;
+	}
+</style>

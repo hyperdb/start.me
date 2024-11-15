@@ -1,0 +1,42 @@
+{
+	"home": [
+		{
+			"title": "Google",
+			"url": "https://www.google.co.jp"
+		}
+	],
+	"dev": [
+		{
+			"title": "GitHub",
+			"url": "https://github.com/hyperdb"
+		},
+		{
+			"title": "Zenn",
+			"url": "https://zenn.dev/hyperdb"
+		},
+		{
+			"title": "Qiita",
+			"url": "https://qiita.com/hyperdb"
+		}
+	],
+	"atcoder": [
+		{
+			"title": "AtCoder",
+			"url": "https://atcoder.jp/?lang=ja"
+		},
+		{
+			"title": "AtCoder Problems",
+			"url": "https://kenkoooo.com/atcoder/#/table/"
+		},
+		{
+			"title": "AtCoder Testcase",
+			"url": "https://www.dropbox.com/sh/nx3tnilzqz7df8a/AAAYlTq2tiEHl5hsESw6-yfLa?e=1&dl=0"
+		}
+	],
+	"onamaeTools": [
+		{
+			"title": "お名前.com navi",
+			"url": "https://navi.onamae.com/login"
+		}
+	]
+}

@@ -1,16 +1,29 @@
 ---
-
+import DummyLayout from '@layouts/DummyLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<DummyLayout>
+	<div class="message-area">
+		<h1>404</h1>
+		<h3>Not Found</h3>
+		<p>ページが見つかりません</p>
+	</div>
+</DummyLayout>
+
+<style>
+	div.message-area {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: #8d8d8d;
+	}
+	div.message-area h1 {
+		font-size: 64px;
+		margin: 0;
+	}
+	div.message-area h3 {
+		font-size: 32px;
+		margin: 0;
+	}
+</style>
