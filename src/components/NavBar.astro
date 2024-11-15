@@ -7,7 +7,7 @@ const items = bookmarks.categories;
 <div class="nav-area">
 	{
 		items.map((item) => (
-			<a class="nav-item" href={item}>
+			<a class="nav-item" href={`${item}/`}>
 				{item}
 			</a>
 		))
